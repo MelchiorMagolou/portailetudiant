@@ -1,11 +1,11 @@
 package org.etudiant.portail.dao;
-import org.etudiant.portail.model.professor;
+import org.etudiant.portail.model.*;
 
  
 public interface ProfessorDAO {
-	public void addprofessor(professor p);
+	public void addprofessor(Professor p);
 	public void deletprofessor(int id);
-	public void updateprofessor(professor p);
-	public professor getprofessorById(int id);
+	public void updateprofessor(Professor p);
+	public Professor getprofessorById(int id);
 
 }

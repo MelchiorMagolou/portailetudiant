@@ -4,7 +4,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import org.etudiant.portail.model.professor;
+import org.etudiant.portail.model.Professor;
 
 public class ProfessorDAOipml implements ProfessorDAO{
 	private EntityManagerFactory factory;
@@ -14,7 +14,7 @@ public class ProfessorDAOipml implements ProfessorDAO{
 		em= factory.createEntityManager();
 	}
 	@Override
-	public void addprofessor(professor p) {
+	public void addprofessor(Professor p) {
 		em.getTransaction().begin();
 		em.persist(p);
 		em.getTransaction().commit();
@@ -24,13 +24,13 @@ public class ProfessorDAOipml implements ProfessorDAO{
 	@Override
 	public void deletprofessor(int id) {
 		em.getTransaction().begin();
-		em.remove(em.find(professor.class, id));
+		em.remove(em.find(Professor.class, id));
 		em.getTransaction().commit();
 		
 	}
 
 	@Override
-	public void updateprofessor(professor p) {
+	public void updateprofessor(Professor p) {
 		em.getTransaction().begin();
 		em.persist(p);
 		em.getTransaction().commit();
@@ -38,9 +38,9 @@ public class ProfessorDAOipml implements ProfessorDAO{
 	}
 
 	@Override
-	public professor getprofessorById(int id) {
+	public Professor getprofessorById(int id) {
 
-		return em.find(professor.class, id);
+		return em.find(Professor.class, id);
 	}
 
 }

@@ -1,11 +1,11 @@
 package org.etudiant.portail.dao;
 import java.util.List;
-import org.etudiant.portail.model.student;; 
+import org.etudiant.portail.model.Student;; 
 public interface StudentDAO {
-	public void addstudent(student e);
-	public List<student> getAllstudent();
+	public void addstudent(Student e);
+	public List<Student> getAllstudent();
 	public void deletestudent(int id);
-	public void updatestudent(student e);
-	public student getstudentById(int id);
+	public void updatestudent(Student e);
+	public Student getstudentById(int id);
 
 }

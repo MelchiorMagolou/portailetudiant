@@ -4,8 +4,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import org.etudiant.portail.model.course;
-import org.etudiant.portail.model.professor;
+import org.etudiant.portail.model.*;
  
 
 public class CourseDAOimpl implements CourseDAO {
@@ -16,7 +15,7 @@ public class CourseDAOimpl implements CourseDAO {
 		em= factory.createEntityManager();
 	}
 	@Override
-	public void addCourse(course c) {
+	public void addCourse(Course c) {
 		em.getTransaction().begin();
 		em.persist(c);
 		em.getTransaction().commit();
@@ -25,12 +24,12 @@ public class CourseDAOimpl implements CourseDAO {
 	@Override
 	public void deletecourse(String type) {
 		em.getTransaction().begin();
-		em.remove(em.find(course.class, type));
+		em.remove(em.find(Course.class, type));
 		em.getTransaction().commit();
 	}
 
 	@Override
-	public void updatecourse(course c) {
+	public void updatecourse(Course c) {
 		em.getTransaction().begin();
 		em.persist(c);
 		em.getTransaction().commit();
@@ -38,8 +37,8 @@ public class CourseDAOimpl implements CourseDAO {
 	}
 
 	@Override
-	public course getcourseBytype(String type) {
-		return em.find(course.class, type);
+	public Course getcourseBytype(String type) {
+		return em.find(Course.class, type);
 	}
 
 }

@@ -1,13 +1,13 @@
 package org.etudiant.portail.dao;
 
-import org.etudiant.portail.model.td_tp_projet;
+import org.etudiant.portail.model.TD_TP_Projet;
 
 import antlr.collections.List;
 
 public class td_tp_projetDAOimpl implements td_tp_projetDAO{
 
 	@Override
-	public void addtd_tp_projet(td_tp_projet ttp) {
+	public void addtd_tp_projet(TD_TP_Projet ttp) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -19,13 +19,13 @@ public class td_tp_projetDAOimpl implements td_tp_projetDAO{
 	}
 
 	@Override
-	public void updatetd_tp_projet(td_tp_projet ttp) {
+	public void updatetd_tp_projet(TD_TP_Projet ttp) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public td_tp_projet gettd_tp_projetBytype(String type) {
+	public TD_TP_Projet gettd_tp_projetBytype(String type) {
 		// TODO Auto-generated method stub
 		return null;
 	}

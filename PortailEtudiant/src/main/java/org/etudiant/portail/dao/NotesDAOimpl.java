@@ -4,7 +4,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import org.etudiant.portail.model.notes;
+import org.etudiant.portail.model.Notes_Average;
+
 
 public class NotesDAOimpl implements  NotesDAO{
 	private EntityManagerFactory factory;
@@ -14,25 +15,25 @@ public class NotesDAOimpl implements  NotesDAO{
 		em= factory.createEntityManager();
 	}
 	@Override
-	public void addnotes(notes n) {
+	public void addnotes(Notes_Average  n) {
 		em.getTransaction().begin();
 		em.persist(n);
 		em.getTransaction().commit();
 		
 	}
 	@Override
-	public void updatenotes(notes n) {
+	public void updatenotes(Notes_Average n) {
 		em.getTransaction().begin();
 		em.persist(n);
 		em.getTransaction().commit();
 		
 	}
 	@Override
-	public notes getnotesById(int id) {
-		return em.find(notes.class, id);
+	public Notes_Average  getnotesById(int id) {
+		return em.find(Notes_Average .class, id);
 	}
 	@Override
-	public notes getnotesBymodule(String module) {
-		return em.find(notes.class, module);
+	public Notes_Average getnotesBymodule(String module) {
+		return em.find(Notes_Average .class, module);
 	}
 }
