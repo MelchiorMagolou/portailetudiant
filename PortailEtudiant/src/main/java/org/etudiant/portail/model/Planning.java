@@ -11,7 +11,6 @@ import javax.persistence.Table;
 
 
 @Entity 
-@Table(name="Planning")
 public class Planning implements Serializable {
 
 	 @Id
@@ -34,7 +33,7 @@ public class Planning implements Serializable {
 	 
 	 private boolean exam ;
 	 
-	 @OneToOne
+	 @OneToOne(mappedBy = "planning")
 	 private Professor prof ;
 	 
 	 private String module ;

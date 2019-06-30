@@ -9,7 +9,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity 
-@Table(name="Date_Of_Examination")
 public class Date_Of_Examination implements Serializable {
 	
 	@Id

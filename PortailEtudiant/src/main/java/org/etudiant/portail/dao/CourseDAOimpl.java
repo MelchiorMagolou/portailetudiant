@@ -1,13 +1,17 @@
 package org.etudiant.portail.dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 
 import org.etudiant.portail.model.*;
- 
+import org.etudiant.portail.model.Course;
 
-public class CourseDAOimpl implements CourseDAO {
+public class CourseDAOimpl implements CourseDAO{
+
 	private EntityManagerFactory factory;
 	private EntityManager em;
 	public CourseDAOimpl() {
@@ -22,14 +26,14 @@ public class CourseDAOimpl implements CourseDAO {
 	}
 
 	@Override
-	public void deletecourse(String type) {
+	public void deleteCourse(int id) {
 		em.getTransaction().begin();
-		em.remove(em.find(Course.class, type));
+		em.remove(em.find(Course.class, id));
 		em.getTransaction().commit();
 	}
 
 	@Override
-	public void updatecourse(Course c) {
+	public void updateCourse(Course c) {
 		em.getTransaction().begin();
 		em.persist(c);
 		em.getTransaction().commit();
@@ -37,8 +41,13 @@ public class CourseDAOimpl implements CourseDAO {
 	}
 
 	@Override
-	public Course getcourseBytype(String type) {
-		return em.find(Course.class, type);
+	public Course getCourseBymodule(String module) {
+		return em.find(Course.class, module);
+	}
+	@Override
+	public List<Course> getAllCourse() {
+		Query q = em.createQuery("select c from Course as c");
+		return q.getResultList();
 	}
 
 }

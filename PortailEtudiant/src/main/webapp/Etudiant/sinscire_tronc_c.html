@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    
+  <meta charset="UTF-8">
+  <title>Inscription</title>
+</head>
+<body>
+     <fieldset> 
+<legend> <center><h2><i><u>  La Fiche D'inscription a <abbr title="Faculte des sciences "> Fst BM </abbr> </u></i></h2></center> </legend> <br>
+    <form  th:action="fichier.php" method="get">
+       Nom : <input type="text" name="nom" placeholder="First Name"  required> <br> <br>
+       Prenom : <input type="text" name="prenom" placeholder="Last Name" required> <br> <br>
+       <fieldset> <legend> Sexe : </legend>
+         Homme<input type="radio" name="sexe" checked> <br>
+         Femme<input type="radio" name="sexe"> <br>        
+       </fieldset> <br>
+       <abbr title="Code d'Etudiant NationaL"> CNE </abbr> : <input type="number" name="cne" required > <br> <br>
+       <abbr title=" Code d'Identite National">CIN </abbr> : <input type="text" name="cin" required > <br> <br>
+       <fieldset> <legend> Filiere choisie : </legend> <br>
+         <input type="radio" name="filiere" required> <abbr title="Science Mathematoque et Informatique"> SMI </abbr>  <br>      
+         <input type="radio" name="filiere" required> <abbr title="Sysmete Informatique et Loogiciel"> SIL </abbr> <br>
+         <input type="radio" name="filiere" required> <abbr title="Informatique et Gestion d'Entreprise"> IGE </abbr> <br>
+         <input type="radio" name="filiere" required> <abbr title="BCG"> BCG </abbr> <br>
+         <input type="radio" name="filiere" required> <abbr title="mip"> MIP </abbr> <br>
+       </fieldset> <br> <br>
+       Date de Naissance : <input type="date" name="date" required> <br> <br>
+       Annee d'Obetention be Bac : <input type="number" required> <br> <br>
+       Moyenne de Bac : <input type="number" min="0" max="20" step="0.1" required> <br> <br>
+       E-mail : <input type="email" name="email" placeholder="Pseudo@hotmail.com" required> <br> <br>
+       Pays : <input type="text" name="pays" value="Maroc" readonly> <br> <br>
+       Votre Ville : <input list="ville" type="text" id="choix-ville"> <br> 
+                       <datalist id="ville">
+                        <option value="Ouarzazate"> </option>
+                        <option value="Casa"> </option>
+                        <option value="Fes"> </option>
+                        <option value="Meknes"> </option>
+                        <option value="Rabat"> </option>
+                        <option value="Tanger"> </option>
+                        <option value="Tinghir"> </option>
+                       </datalist> <br> <br>
+       Votre Discipline : <select name="discipline">
+                            <option> Science Mathematique </option>
+                            <option> Science Experementale </option>
+                            <option> Science Economique </option>
+                          </select> <br> <br>
+       
+                      
+                   
+       <input type="submit" value="Enregistrer">
+    </form>
+    </fieldset>
+</body>
+</html>
+

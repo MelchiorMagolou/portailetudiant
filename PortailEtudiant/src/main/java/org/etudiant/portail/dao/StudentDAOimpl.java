@@ -15,32 +15,32 @@ public class StudentDAOimpl implements StudentDAO {
 	
 	// private List<student> students = new ArrayList<student>();
 	@Override
-	public void addstudent(Student e) {
+	public void addStudent(Student e) {
 		em.getTransaction().begin();
 		em.persist(e);
 		em.getTransaction().commit();
 		
 	}
 	@Override
-	public List<Student> getAllstudent() {
-		Query q = em.createQuery("select e from student as e");
+	public List<Student> getAllStudent() {
+		Query q = em.createQuery("select s from Student as s");
 		return q.getResultList();
 	}
 	@Override
-	public void deletestudent(int id) {
+	public void deleteStudent(String id) {
 		em.getTransaction().begin();
 		em.remove(em.find(Student.class, id));
 		em.getTransaction().commit();
 	}
 	@Override
-	public void updatestudent(Student e) {
+	public void updateStudent(Student e) {
 		em.getTransaction().begin();
 		em.persist(e);
 		em.getTransaction().commit();
 		
 	}
 	@Override
-	public Student getstudentById(int id) {
+	public Student getStudentById(String id) {
 		return em.find(Student.class, id);
 	}
 

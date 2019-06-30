@@ -1,0 +1,76 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+ <fieldset>
+<center>
+<h1>inscription  dans des options scolaire</h1>
+<form th:action="" >
+<table>
+<tr th:each>
+<th width="30%"><label>Nom:</label></th>
+<th><input  id="nom" type="text" name="nom"/></th></tr>
+<tr>
+<th><label>Prenom:</label></th>
+<th><input  id="prenom" type="text" name="prenom"/></th></tr>
+<tr>
+<th><label>CNE:</label></th>
+<th><input id="cne" type="text" name="cne"/></th></tr>
+<tr>
+<th><label>CIN:</label></th>
+<th><input  id="cin" type="text" name="cin"/></th></tr>
+<tr>
+<th ><label>Date denaissance:</label></th>
+<th><input type="Date" name="dateN" id="dateNaissace"/></th></tr>
+<tr>
+<th width="40%"><label>Lieu de Naissance:</label></th>
+<th><input type="text" name="lieu" id="lieu"/></th></tr>
+<tr>
+<th><label>Nasionnalite:</label></th>
+<th><input type="text" name="nasionnalite"/></th></tr>
+<tr >
+<th><label>Email:</label></th>
+<th><input id=email name=email type=email placeholder="exemple@domaine.com" required></th></tr>
+<tr>
+<th><label>Adresse:</label></th>
+<th><input  id="adresse" type="text" name="adresse"/></th></tr>
+<tr >
+<th><label>Matricule:</label></th>
+<th><input id="matricule" type="text" name="matricule"/></th></tr>
+<tr>
+<th><label>Telephone::</label></th>
+<th><input id=telephone name=telephone type=tel placeholder="par ex&nbsp;: +3375500000000" required></th></tr>
+</table>
+</form>
+
+</div>
+<hr/>
+<div class="c2">
+
+
+<form action="" method="get">
+<table>
+<tr width="30%">
+<th><B><font color=#0000FF>choisire les options</font></B></th>
+<tr width="30%">
+<th>Sports&nbsp<input type="checkbox" name="chois1" value="1" checked/></th>
+    <th>Football&nbsp<input type="checkbox" name="chois1" value="1" checked/></th>
+    <th>handball &nbsp<input type="checkbox" name="chois2" value="1"/></th>
+    <th>basketball &nbsp<input type="checkbox" name="chois3" value="1"/></th>
+    <th>baseball &nbsp<input type="checkbox" name="chois4" value="1"/></th>
+    
+    </tr>  
+<tr><th width="30%"> Music&nbsp<input type="checkbox" name="chois2" value="2" /></th></tr>
+ <tr><th> Formation en informatique&nbsp<input type="checkbox" name="chois3" value="3"/></th></tr>
+ <tr><th>Les langues&nbsp<input type="checkbox" name="chois3" value="4" /></th></tr>
+
+ </table>
+ </form>
+
+</div>
+</center>
+ </fieldset>
+</body>
+</html>

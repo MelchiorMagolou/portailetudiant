@@ -1,5 +1,6 @@
 package org.etudiant.portail.model;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -12,8 +13,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity 
-@Table(name="Course")
-public class Course {
+public class Course implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -30,6 +30,8 @@ public class Course {
 	
 	private byte[] file;
 	
+	@ManyToOne
+	private Professor prof ;
 
 	public int getId_doc() {
 		return id_doc;
@@ -38,6 +40,16 @@ public class Course {
 
 	public void setId_doc(int id_doc) {
 		this.id_doc = id_doc;
+	}
+
+
+	public Professor getProf() {
+		return prof;
+	}
+
+
+	public void setProf(Professor prof) {
+		this.prof = prof;
 	}
 
 

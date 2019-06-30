@@ -1,12 +1,14 @@
 package org.etudiant.portail.dao;
+import java.util.List;
+
 import org.etudiant.portail.model.*;
 
-import antlr.collections.List;;
+
 public interface td_tp_projetDAO {
-	public void addtd_tp_projet(TD_TP_Projet ttp);
-	public List getAlltd_tp_projet();
-	public void updatetd_tp_projet(TD_TP_Projet ttp);
-	public TD_TP_Projet gettd_tp_projetBytype(String type);
-	public double getAVG();
+	public void addTD_TP_Projet(TD_TP_Projet ttp);
+	public List<TD_TP_Projet>  getAllTD_TP_Projet();
+	public void updateTD_TP_Projet(TD_TP_Projet ttp);
+	public TD_TP_Projet getTD_TP_ProjetById(int id);
+	 
  
-	}
+}

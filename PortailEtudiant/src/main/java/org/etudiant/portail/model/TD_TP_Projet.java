@@ -11,7 +11,6 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity  
-@Table(name="TD_TP_Projet")
 public class TD_TP_Projet implements Serializable {
 	
 	@Id
@@ -33,6 +32,25 @@ public class TD_TP_Projet implements Serializable {
 	private String spinneret ;
 	
 	private byte[] file;
+	@ManyToOne
+	private Professor prof;
+
+	
+	public int getId_doct() {
+		return id_doct;
+	}
+
+	public void setId_doct(int id_doct) {
+		this.id_doct = id_doct;
+	}
+
+	public Professor getProf() {
+		return prof;
+	}
+
+	public void setProf(Professor prof) {
+		this.prof = prof;
+	}
 
 	public String getType() {
 		return type;

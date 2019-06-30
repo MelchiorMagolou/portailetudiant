@@ -10,7 +10,6 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity 
-@Table(name="Professor")
 public class Professor implements Serializable {
 	
 	    @Id
@@ -26,10 +25,13 @@ public class Professor implements Serializable {
 		
 		private String department ;
 		
-		@OneToMany(mappedBy="id_doct")
+		@OneToOne
+		private Planning planning;
+
+		@OneToMany(mappedBy="prof")
 		private List<TD_TP_Projet> doct ;
 		
-		@OneToMany(mappedBy="id_doc")
+		@OneToMany(mappedBy="prof")
 		private List<Course> cours ;
 		
 		//@OneToOne
@@ -44,6 +46,18 @@ public class Professor implements Serializable {
 		}
 
 		
+
+		public List<Course> getCours() {
+			return cours;
+		}
+
+
+
+		public void setCours(List<Course> cours) {
+			this.cours = cours;
+		}
+
+
 
 		public String getCin_prof() {
 			return cin_prof;
@@ -113,6 +127,30 @@ public class Professor implements Serializable {
 			this.department = department;
 		}
 		
+		public Planning getPlanning() {
+			return planning;
+		}
+
+
+
+		public void setPlanning(Planning planning) {
+			this.planning = planning;
+		}
+
+
+
+		public List<TD_TP_Projet> getDoct() {
+			return doct;
+		}
+
+
+
+		public void setDoct(List<TD_TP_Projet> doct) {
+			this.doct = doct;
+		}
+
+
+
 		
 	
 

@@ -10,7 +10,6 @@ import javax.persistence.Table;
 
 
 @Entity 
-@Table(name="Student")
 public class Student implements Serializable {
 	
 	
@@ -31,6 +30,14 @@ public class Student implements Serializable {
 	
     private String spinneret ;
 	
+	public List<Notes_Average> getNotes() {
+		return notes;
+	}
+
+	public void setNotes(List<Notes_Average> notes) {
+		this.notes = notes;
+	}
+
 	private String University_level ;
 	
 	@OneToMany(mappedBy="id_note")
